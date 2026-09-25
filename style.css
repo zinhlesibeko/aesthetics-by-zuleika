@@ -1,0 +1,634 @@
+/* Aesthetics by Zuleika
+   WEDE5020w - Part 2 CSS
+   External stylesheet used by all HTML pages.
+*/
+
+/* ------------------------------
+   1. CSS RESET + BASE STYLES
+------------------------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lancelot", Georgia, serif;
+    color: #2f2529;
+    background: #fffafc;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.container {
+    width: min(92%, 72rem);
+    margin-inline: auto;
+}
+
+.narrow {
+    max-width: 48rem;
+    text-align: center;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.eyebrow {
+    margin-bottom: 0.5rem;
+    color: #a56b7b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.page-title,
+h1,
+h2,
+h3 {
+    line-height: 1.15;
+}
+
+.page-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* ------------------------------
+   2. HEADER + NAVIGATION
+------------------------------ */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 250, 252, 0.97);
+    border-bottom: 1px solid #e4cbd2;
+}
+
+.nav-wrapper {
+    min-height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.brand span {
+    font-family: Georgia, serif;
+    font-size: 1.55rem;
+}
+
+.brand small {
+    font-size: 1rem;
+    font-style: italic;
+    color: #a56b7b;
+    margin-left: 1.2rem;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.site-nav a {
+    padding: 0.5rem 0.25rem;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.site-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #c88c9e;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a.active {
+    color: #a56b7b;
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus::after,
+.site-nav a.active::after {
+    transform: scaleX(1);
+}
+
+.site-nav .nav-button {
+    padding: 0.7rem 1.2rem;
+    border: 1px solid #9f7b84;
+    background: #fff;
+}
+
+.site-nav .nav-button::after {
+    display: none;
+}
+
+.site-nav .nav-button:hover,
+.site-nav .nav-button:focus {
+    background: #f4dfe5;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+/* ------------------------------
+   3. BUTTONS
+------------------------------ */
+.button {
+    display: inline-block;
+    border: 1px solid #4a353b;
+    background: #3c3034;
+    color: #fff;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: #a56b7b;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* ------------------------------
+   4. HOMEPAGE HERO
+------------------------------ */
+.hero {
+    min-height: 34rem;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(255, 250, 252, 0.98) 0%, rgba(255, 250, 252, 0.88) 38%, rgba(255, 250, 252, 0.15) 75%),
+        url("../images/hero.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    padding-block: 5rem;
+}
+
+.hero-copy {
+    max-width: 34rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    margin-bottom: 1.2rem;
+}
+
+.hero-copy > p:not(.eyebrow) {
+    max-width: 32rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.6rem;
+}
+
+/* ------------------------------
+   5. HOMEPAGE FEATURES
+------------------------------ */
+.intro h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.intro .narrow > p:last-child {
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.feature-icon {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    color: #b77789;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------
+   6. ABOUT PAGE
+------------------------------ */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-story {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about-story h2,
+.founder h2 {
+    margin-bottom: 1rem;
+}
+
+.about-story p + p {
+    margin-top: 1rem;
+}
+
+.image-placeholder,
+.portrait-placeholder,
+.map-placeholder,
+.service-image {
+    background: #f1e6e9;
+    border: 1px solid #d7b8c0;
+    color: #8c6b74;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.image-placeholder {
+    min-height: 22rem;
+}
+
+.portrait-placeholder {
+    width: min(100%, 18rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-inline: auto;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e4cbd2;
+    margin: 2rem 0;
+}
+
+.founder {
+    margin-block: 3rem;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    border-top: 1px solid #e4cbd2;
+    border-bottom: 1px solid #e4cbd2;
+}
+
+.mission-grid article {
+    padding: 2rem;
+}
+
+.mission-grid article + article {
+    border-left: 1px solid #e4cbd2;
+}
+
+/* ------------------------------
+   7. SERVICES
+------------------------------ */
+.services-list {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.service-card {
+    display: grid;
+    grid-template-columns: 9rem 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid #d8c2c8;
+    background: #fff;
+    min-height: 9rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 0.7rem 1.5rem rgba(80, 45, 55, 0.08);
+    transform: translateY(-2px);
+}
+
+.service-image {
+    align-self: stretch;
+    min-height: 9rem;
+}
+
+.service-info h2 {
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    padding: 1.5rem;
+    min-width: 7rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.price small {
+    display: block;
+    font-size: 0.8rem;
+    color: #7c626a;
+}
+
+/* ------------------------------
+   8. ENQUIRY FORM
+------------------------------ */
+.form-container {
+    max-width: 52rem;
+    text-align: center;
+}
+
+.enquiry-form {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #dfc8ce;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid #bda4ab;
+    border-radius: 0.2rem;
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #d9aab8;
+    outline-offset: 1px;
+}
+
+.form-button {
+    margin-top: 1.5rem;
+}
+
+.form-message {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+/* ------------------------------
+   9. CONTACT
+------------------------------ */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1.5rem;
+    margin-block: 2rem;
+}
+
+.contact-details h2,
+.service-area h2 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details a:hover {
+    color: #a56b7b;
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.8rem;
+}
+
+.social-links a {
+    width: 2.7rem;
+    height: 2.7rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid #bda4ab;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    background: #f4dfe5;
+}
+
+.map-placeholder {
+    min-height: 20rem;
+}
+
+.service-area {
+    margin-top: 1rem;
+}
+
+/* ------------------------------
+   10. FOOTER
+------------------------------ */
+.site-footer {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid #e4cbd2;
+    color: #6e5960;
+}
+
+/* ------------------------------
+   11. RESPONSIVE DESIGN
+   Desktop -> Tablet -> Mobile
+------------------------------ */
+@media (max-width: 56rem) {
+    .site-nav {
+        gap: 0.8rem;
+    }
+
+    .two-column,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        gap: 1rem;
+    }
+
+    .service-card {
+        grid-template-columns: 7rem 1fr auto;
+    }
+}
+
+@media (max-width: 46rem) {
+    .nav-wrapper {
+        min-height: 4.8rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        background: #fffafc;
+        border-bottom: 1px solid #e4cbd2;
+    }
+
+    .site-nav.open {
+        display: flex;
+    }
+
+    .site-nav a {
+        text-align: center;
+    }
+
+    .site-nav .nav-button {
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 30rem;
+        background:
+            linear-gradient(rgba(255, 250, 252, 0.86), rgba(255, 250, 252, 0.86)),
+            url("../images/hero.jpg") center/cover no-repeat;
+    }
+
+    .feature-grid,
+    .mission-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .service-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .service-image {
+        min-height: 12rem;
+    }
+
+    .service-info,
+    .price {
+        padding: 1rem 1.2rem;
+    }
+
+    .price {
+        text-align: left;
+    }
+
+    .mission-grid article + article {
+        border-left: 0;
+        border-top: 1px solid #e4cbd2;
+    }
+}
+
+@media (max-width: 30rem) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .section {
+        padding: 2.8rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .enquiry-form {
+        padding: 1rem;
+    }
+}
