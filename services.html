@@ -75,6 +75,34 @@
                     <div class="price"><small>from</small>R1,800</div>
                 </article>
             </div>
+            <div class="service-controls">
+  <input type="text" id="service-search" placeholder="Search services (e.g. bridal, glam)..." aria-label="Search services">
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="everyday">Everyday</button>
+    <button class="filter-btn" data-filter="events">Events</button>
+    <button class="filter-btn" data-filter="special">Special</button>
+  </div>
+</div>
+
+<div class="services-grid">
+  <article class="service-card" data-category="everyday">
+    <h3>Soft Glam</h3><p>From R650</p>
+  </article>
+  <article class="service-card" data-category="everyday">
+    <h3>Full Glam</h3><p>From R850</p>
+  </article>
+  <article class="service-card" data-category="special">
+    <h3>Editorial</h3><p>From R1,200</p>
+  </article>
+  <article class="service-card" data-category="events">
+    <h3>Matric Dance</h3><p>From R700</p>
+  </article>
+  <article class="service-card" data-category="events">
+    <h3>Bridal</h3><p>From R1,800</p>
+  </article>
+</div>
+<p id="no-results" hidden>No services match your search.</p>
         </div>
     </main>
 
