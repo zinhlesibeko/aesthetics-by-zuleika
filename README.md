@@ -21,5 +21,3 @@ WEDE5020w Web Development project.
 - Added desktop, tablet and mobile breakpoints.
 - Struggled to add images for website
 
-### Part 1 corrections
-- Record any lecturer feedback and the exact corrections made here.
