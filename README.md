@@ -20,4 +20,4 @@ WEDE5020w Web Development project.
 - Added responsive navigation.
 - Added desktop, tablet and mobile breakpoints.
 - Struggled to add images for website
-
+- Added functionality to my website using javascript
